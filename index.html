@@ -23,10 +23,17 @@
             fetch("http://192.168.0.105:4000/data").then(function (res) {
                 res.json().then(function (data) {
                     var docs = document.getElementById("name");
-                   
-                    data.forEach(function (doc, i) {
 
-                        docs.insertAdjacentHTML('afterend', "<div class='cart'><div style='margin:5px' class='headerCart'><div><img class='img' src="+doc.image+" /> </div> <div class='headerCartText'> <p class='text_Name'><b>"+doc.name+"</b></p><p class='text_Degi'>"+doc.position+"</p> </div></div><div class='footer'> <i class='fa fa-line-chart'></i><p class='bottomText'>"+doc.salary+"</p><p class='bottomText'></p><p class='bottomText'>"+doc.company+"</p></div><div class='footer'>"+doc.time+"</div></div>")
+                    data.forEach(function (doc, i) {
+                        let date= new Date(doc.date);
+                        let Month=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+                        let stringDate=date.getDay()+' '+Month[date.getMonth()]+' '+date.getFullYear();
+                        let s = doc.salary;
+                        s = s / 10;
+                        s = s / 10;
+                        s = s / 10;
+
+                        docs.insertAdjacentHTML('afterend', "<div class='cart'><div class='headerCart'><div><img class='img' src=" + doc.image + " /> </div> <div class='headerCartText'> <p class='text_Name'><b>" + doc.name + "</b></p><p class='text_Degi'>" + doc.position + "</p> </div></div><div class='footer'> <i class='fa fa-line-chart'></i><p class='bottomText'>" + s + "</p><p class='bottomText'>K</p></p><p class='bottomText'>|</p><p class='bottomText'>" + doc.company + "</p></div><div class='footer'>" + stringDate + "</div></div>")
 
                     });
 
