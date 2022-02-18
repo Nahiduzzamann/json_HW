@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="body">
+        <div id="name"></div>
+
+    </div>
+
+
+
+    <script>
+        (function () {
+            fetch("http://192.168.0.105:4000/data").then(function (res) {
+                res.json().then(function (data) {
+                    var docs = document.getElementById("name");
+                   
+                    data.forEach(function (doc, i) {
+
+                        docs.insertAdjacentHTML('afterend', "<div class='cart'><div style='margin:5px' class='headerCart'><div><img class='img' src="+doc.image+" /> </div> <div class='headerCartText'> <p class='text_Name'><b>"+doc.name+"</b></p><p class='text_Degi'>"+doc.position+"</p> </div></div><div class='footer'> <i class='fa fa-line-chart'></i><p class='bottomText'>"+doc.salary+"</p><p class='bottomText'></p><p class='bottomText'>"+doc.company+"</p></div><div class='footer'>"+doc.time+"</div></div>")
+
+                    });
+
+                });
+            })
+
+        })();
+    </script>
+
+
+
+
+</body>
+
+</html>

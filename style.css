@@ -1,0 +1,53 @@
+.body{
+    width: 98%;
+    border: 2px solid;  
+    justify-content: center;
+    background-color: rgb(49, 45, 45);
+}
+.cart{
+    width: 50%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: rgb(65, 61, 61);
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgb(10, 10, 10);  
+    margin-left: 25%;
+}
+.img{
+    border-radius: 40px;
+    height: 80px;
+    width: 80px;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+.headerCart{
+    display: flex;
+    margin: 5px;
+}
+.headerCartText{
+    height: 70px;
+    padding-top: 20px; 
+    color: aliceblue;
+}
+.text_Name{
+    font-size: large;
+    margin: 0px;
+    
+}
+.text_Degi{
+    margin: 0px;
+
+}
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bottomText{
+    font-size: large;
+    margin-left: 5px;
+    color: aliceblue;
+}
+i{
+    color: aliceblue;
+}
